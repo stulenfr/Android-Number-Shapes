@@ -68,13 +68,18 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("UserNumber", usersNumber.getText().toString());
 
-        Number myNumber= new Number();
+        String message="";
+        if (usersNumber.getText()==null){
+            message="There is no number";
+        }else {
+            Number myNumber = new Number();
 
-        myNumber.number= Integer.parseInt(usersNumber.getText().toString());
+            myNumber.number = Integer.parseInt(usersNumber.getText().toString());
 
-        myNumber.testNumber();
-
-        Toast.makeText(MainActivity.this,myNumber.verdict,Toast.LENGTH_LONG).show();
+            myNumber.testNumber();
+            message=myNumber.verdict;
+        }
+        Toast.makeText(MainActivity.this,message,Toast.LENGTH_LONG).show();
     }
 
     @Override

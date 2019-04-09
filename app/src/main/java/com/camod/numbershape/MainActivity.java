@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     class Number {
         int number;
+        String verdict="";
 
         public boolean isSquare(){
 
@@ -45,6 +46,22 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         }
+
+        public void testNumber(){
+            if(this.isTriangular() && this.isSquare()){
+                this.verdict="This number is both Square and Triangular";
+            }
+            else if ( this.isSquare()){
+                this.verdict="This number is Square";
+            }
+            else if(this.isTriangular()){
+                this.verdict="This number is Triangular";
+            }
+            else{
+                this.verdict="This number is neither Square nor Triangular";
+            }
+        }
+
     }
     public void testNumber(View view){
         EditText usersNumber= (EditText) findViewById(R.id.numberText);

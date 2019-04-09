@@ -72,24 +72,9 @@ public class MainActivity extends AppCompatActivity {
 
         myNumber.number= Integer.parseInt(usersNumber.getText().toString());
 
-        String message="";
-        if(myNumber.isSquare()){
+        myNumber.testNumber();
 
-            if (myNumber.isTriangular()){
-                message= myNumber.number + " is both Triangular and Square!";
-            }
-            else{
-                message = myNumber.number + " is Square!";
-            }
-        }
-        if(myNumber.isTriangular()){
-            message = myNumber.number + " is Triagnular!";
-        }
-        else{
-            message= myNumber.number + " is niether Trinagular or Square. :(";
-        }
-
-        Toast.makeText(MainActivity.this,message,Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this,myNumber.verdict,Toast.LENGTH_LONG).show();
     }
 
     @Override
